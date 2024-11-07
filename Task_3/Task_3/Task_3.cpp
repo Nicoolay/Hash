@@ -4,8 +4,8 @@
 #include <cmath>
 
 int string_hash(const std::string& str) {
-    int p = 3;       // Константа для хэширования
-    int n = 101;     // Модуль, чтобы избежать переполнения
+    int p = 31;       // Константа для хэширования
+    int n = 19009;     // Модуль, чтобы избежать переполнения
     int hash_value = 0;
 
     for (size_t i = 0; i < str.size(); ++i) {
@@ -15,8 +15,8 @@ int string_hash(const std::string& str) {
 }
 
 int find_substring_light_rabin_karp(const std::string& source, const std::string& substring) {
-    int p = 3;
-    int n = 101;
+    int p = 31;
+    int n = 19009;
 
     int subs_hash = string_hash(substring);// вычисляем хэш от подстроки
     size_t k = substring.size();  // Длина подстроки
